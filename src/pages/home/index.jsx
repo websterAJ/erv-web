@@ -21,6 +21,9 @@ export default function Home() {
             <div id="page-content">
                 <Conocenos/>
                 <Suspense fallback = {<div id = {'loading'} />}>
+                    <Testimonios/>
+                </Suspense>
+                <Suspense fallback = {<div id = {'loading'} />}>
                     <Eventos/>
                 </Suspense>
                 <Suspense fallback = {<div id = {'loading'} />}>
@@ -42,9 +45,6 @@ export default function Home() {
                 </section>
                 <Suspense fallback = {<div id = {'loading'} />}>
                     <Blog/>
-                </Suspense>
-                <Suspense fallback = {<div id = {'loading'} />}>
-                    <Testimonios/>
                 </Suspense>
                 <section className="box-content box-7" id="location">
                     <div className="clearfix">
