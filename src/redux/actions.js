@@ -1,7 +1,35 @@
 import axios from 'axios';
-import { GET_ALL_BANNER, GET_ALL_EVENTOS, GET_ALL_BLOG, GET_ALL_GALERIA}  from "./action-type";
+import { GET_ALL_BANNER, GET_ALL_EVENTOS, GET_ALL_BLOG, GET_ALL_GALERIA, GET_ALL_PRODUCTO, GET_ALL_CATEGORIAS}  from "./action-type";
 
 
+
+
+export const getAllProductos=()=>{
+    return async (dispatch)=>{
+        try {
+            let { data } = await axios.get('/productos');
+            dispatch({
+                type:GET_ALL_PRODUCTO,
+                payload: data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+export const getAllCategorias=()=>{
+    return async (dispatch)=>{
+        try {
+            let { data } = await axios.get('/categorias');
+            dispatch({
+                type:GET_ALL_CATEGORIAS,
+                payload: data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
 export const getAllBanner = ()=>{
     return async (dispatch) => {
         try {
