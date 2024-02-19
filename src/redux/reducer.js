@@ -6,6 +6,8 @@ const initialState = {
     galeria:[],
     productos:[],
     categorias:[],
+    favorites:[],
+    carrito:[],
 }
 
 const rootReducer = (state = initialState, action) => {
