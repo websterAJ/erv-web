@@ -1,0 +1,89 @@
+.filter_container {
+    max-width: 350px;
+    padding: 0 30px;
+}
+
+.form_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    & input {
+        outline: none;
+        color: black;
+        padding-inline: 10px;
+        padding-block: 5px;
+        border: 1px solid #785843;
+        border-radius: 4px;
+    }
+
+    & .title_checkbox {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        height: 30px;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 0 15px;
+        margin: 0;
+        transition: .3s ease;
+        cursor: pointer;
+        color: black;
+
+        &:hover {
+            color: #785843;
+        }
+
+        input[type='checkbox'] {
+            margin: 0;
+        }
+    }
+
+
+    & .form_category {
+        display: flex;
+        justify-content: center;
+        flex-direction: column
+    }
+
+    & .price_container {
+        display: flex;
+        gap: 10px;
+
+        & .symbol_dollar {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            outline: none;
+            color: black;
+            border: 1px solid #785843;
+            border-radius: 4px;
+            background-color: white;
+
+            &::before {
+                content: '$';
+                position: absolute;
+                left: 10px;
+                color: rgba(0, 0, 0, 0.453);
+                z-index: 10;
+            }
+
+            & input {
+                border: none;
+                width: 100%;
+                padding-left: 25px;
+            }
+        }
+
+        & .dash {
+            margin-top: 48px;
+            width: 20px;
+            height: 2px;
+            border-radius: 4px;
+            background-color: #785843;
+        }
+    }
+}

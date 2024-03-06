@@ -1,11 +1,13 @@
-import {GET_ALL_BANNER,GET_ALL_EVENTOS,GET_ALL_BLOG,GET_ALL_GALERIA, GET_ALL_PRODUCTO, GET_ALL_CATEGORIAS}  from "./action-type";
+import { GET_ALL_BANNER, GET_ALL_EVENTOS, GET_ALL_BLOG, GET_ALL_GALERIA, GET_ALL_PRODUCTO, GET_ALL_CATEGORIAS, GET_PEDIDOS, GET_CARRITO } from "./action-type";
 const initialState = {
     post: [],
     banners: [],
-    eventos:[],
-    galeria:[],
-    productos:[],
-    categorias:[],
+    eventos: [],
+    galeria: [],
+    productos: [],
+    categorias: [],
+    pedidos: [],
+    carrito: [],
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -39,6 +41,16 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 post: action.payload.data
+            }
+        case GET_PEDIDOS:
+            return {
+                ...state,
+                pedidos: action.payload.data
+            }
+        case GET_CARRITO:
+            return {
+                ...state,
+                carrito: action.payload.data
             }
         default:
             return state;

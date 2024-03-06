@@ -1,0 +1,39 @@
+.user_container {
+    display: flex;
+    gap: 5px;
+
+    & .user_navbar {
+        flex: 1;
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            width: 100%;
+
+            & li {
+                display: flex;
+                width: 100%;
+
+                & a {
+                    width: 100%;
+                    padding: 10px;
+                    border-left: 3px solid transparent;
+                    color: black;
+
+                    &:hover {
+                        color: #785843;
+                        border-left: 3px solid #785843;
+                    }
+                }
+            }
+        }
+    }
+
+    .user_content {
+        flex: 4;
+
+
+    }
+
+}
