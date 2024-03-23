@@ -8,15 +8,11 @@ const Offcanvas = ({ title, children, isOpen, toggleOffcanvas, openLeft }) => {
     const offcanvasClass = `${styles.offcanvas} ${openLeft ? styles.openLeft : styles.openRight}`;
 
     useEffect(() => {
-        // Al montar el componente
         if (isOpen) {
-            // Añadir clase al body para ocultar el scroll
             document.body.style.overflow = 'hidden';
         }
 
-        // Al desmontar el componente
         return () => {
-            // Remover la clase del body cuando se cierre el Offcanvas
             document.body.style.overflow = 'unset';
         };
     }, [isOpen]);

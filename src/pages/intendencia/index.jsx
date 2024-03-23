@@ -98,11 +98,9 @@ export default function Intendencia() {
                             <div className="text-center">
                                 <h2 className={styles.card_title}>{element.nombre}</h2>
                             </div>
-                            <div className={styles.card_information}>
+                            {/* <div className={styles.card_information}>
                                 <p className={styles.card_description}>{element.categoria}</p>
-                                <p className={styles.card_description}>{element.descripcion}</p>
-                                <p className={styles.card_description}>{element.stock}</p>
-                            </div>
+                            </div> */}
                         </div>
                         <div className={styles.panelFooter}>
                             <span className={styles.icon_container}><BsCartPlus className={styles.icon} /></span>

@@ -13,16 +13,22 @@ export default function Navbar() {
     const dispatch = useDispatch();
     const carrito = useSelector((state) => state.carrito);
     const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
-    const [cart, setCart] = useState([]);
 
     const toggleOffcanvas = () => {
         setIsOffcanvasOpen(!isOffcanvasOpen);
     };
 
-    const crearPedido = (users_id, carrito_id) => {
-        dispatch(createOrder(users_id, carrito_id))
-        dispatch(createCarrito(users_id))
-        dispatch(getCarrito(users_id))
+    const crearPedido = async (users_id, carrito_id) => {
+        try {
+            await axios.post('/pedido', {
+                users_id,
+                carrito_id
+            })
+            dispatch(createCarrito(users_id))
+            dispatch(getCarrito(users_id))
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     const changeCant = async (producto_id, carrito_id, cantidad, subtotal) => {
@@ -53,7 +59,7 @@ export default function Navbar() {
 
     useEffect(() => {
         dispatch(getCarrito(1))
-    }, [dispatch, carrito])
+    }, [dispatch])
 
     return (
         <>

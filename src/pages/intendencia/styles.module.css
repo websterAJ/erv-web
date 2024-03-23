@@ -26,6 +26,7 @@
 
 .card_body {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     height: 130px;
 }
@@ -101,7 +102,6 @@
 
 .card_information {
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
 }

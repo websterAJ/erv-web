@@ -1,6 +1,11 @@
+.order_title {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
 .user_container {
     display: flex;
-    gap: 5px;
 
     & .user_navbar {
         flex: 1;
@@ -31,9 +36,104 @@
     }
 
     .user_content {
-        flex: 4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 100%;
 
-
+        /* flex: 4; */
+        table,
+        th {
+            text-align: center;
+        }
     }
 
+}
+
+.order_container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #785843;
+
+    .order_column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        & span:nth-child(2) {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+
+    .btn_order {
+        background-color: transparent;
+        color: #785843;
+        min-width: 100%;
+        border: 1px solid #785843;
+
+        &:hover {
+            background-color: #785843;
+            color: white;
+        }
+    }
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+
+        &:nth-child(4) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    }
+
+    input {
+        padding: 5px;
+    }
+
+}
+
+@media (width <=768px) {
+    .order_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 50px;
+        border: 1px solid #785843;
+        max-width: 400px;
+
+        .order_column {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn_order {
+            background-color: #785843;
+            color: white;
+        }
+    }
 }
