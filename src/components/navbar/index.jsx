@@ -103,6 +103,9 @@ export default function Navbar() {
                                     <a className="page-scroll" href="/intendencia">Intendencia</a>
                                 </li>
                                 <li>
+                                    <a className="page-scroll" href="/usuario">Usuario</a>
+                                </li>
+                                <li>
                                     <a className="page-scroll" href="#location">Contactanos</a>
                                 </li>
                                 <li>
