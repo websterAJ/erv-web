@@ -60,7 +60,6 @@ export default function Navbar() {
     useEffect(() => {
         dispatch(getCarrito(1))
     }, [dispatch])
-
     return (
         <>
             <div id="nav-wrapper">
@@ -107,6 +106,19 @@ export default function Navbar() {
                                 </li>
                                 <li>
                                     <a className="page-scroll" href="#location">Contactanos</a>
+                                </li>
+                                <li>
+                                    <a className="page-scroll" href='' onClick={() => setShowFavorites(!showFavorites)}>
+                                        <i className="fa fa-heart"></i>
+                                        <span>{favorites?.length}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className="page-scroll" href={'/cart'}>
+                                        <i className="fa fa-shopping-bag"></i>
+                                        <span>{carrito[0] ? carrito[0]?.detalle_carritos?.reduce((acc, item) => acc + parseInt(item.cantidad), 0) : 0}</span>
+                                    </a>
+                                    <span> {carrito[0]?.detalle_carritos?.length > 0 ? `$ ${Math.round(carrito[0]?.total * 100) / 100}` : ''}</span>
                                 </li>
                                 <li>
                                     <a className="page-scroll" href="https://admin.ervzla.com/">Iniciar</a>
