@@ -1,0 +1,27 @@
+.user-panel__container {
+  width: 100%;
+  padding-top: 72px;
+  transition: 0.3s ease;
+  background-color: var(--white);
+}
+
+.user-pannel__nav {
+  position: fixed;
+  height: 100%;
+}
+
+.user-pannel__content {
+  width: 100%;
+  min-height: calc(100dvh - 72px);
+  padding-left: calc(80px + 1rem);
+  padding-right: 1rem;
+  padding-block: 2rem;
+  background-color: var(--white);
+}
+
+@media (width > 768px) {
+  .user-pannel__content {
+    padding-left: calc(80px + 5rem);
+    padding-right: 5rem;
+  }
+}

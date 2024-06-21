@@ -1,0 +1,35 @@
+.order-form__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.order-form__container.open-form {
+  visibility: visible;
+  opacity: 1;
+}
+
+.order-form__inner {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+  background-color: var(--white);
+  box-shadow: 2px 2px 15px rgb(152, 152, 152);
+  padding: 2rem;
+}
+
+.order-form__inner form {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}

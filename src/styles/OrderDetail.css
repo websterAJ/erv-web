@@ -1,0 +1,116 @@
+.order-detail__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  padding: 5rem 1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.order-detail__container.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.order-detail__inner {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(auto-fit, 80px);
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background-color: var(--white);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  overflow-y: auto;
+}
+
+.order-detail__inner h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--txt-brown);
+  padding-block: 1.5rem;
+  border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.order-detail__inner button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.order-detail__inner button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.order-detail__body {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.body__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.body__info p {
+  font-weight: 600;
+  color: var(--txt-black);
+}
+
+.order-detail__inner img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.order-detail__total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  padding-block: 1.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgb(170, 170, 170);
+}
+
+.order-detail__total span {
+  color: var(--txt-brown);
+  font-weight: 600;
+}
+
+@media (width > 768px) {
+  .order-detail__container {
+    padding-block: 2rem;
+  }
+  .order-detail__inner {
+    max-width: 500px;
+  }
+
+  .order-detail__inner button {
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+}
