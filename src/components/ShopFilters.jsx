@@ -12,6 +12,7 @@ const ShopFilters = ({ setCategories, setMaxPrice, setMinPrice }) => {
   const categories = useSelector((state) => state.categorias);
 
   const handleCategoryChange = (category) => {
+    console.log(category);
     setCategories((prev) => {
       const newCategories = prev.categories.includes(category)
         ? prev.categories.filter((cat) => cat !== category)
@@ -39,7 +40,7 @@ const ShopFilters = ({ setCategories, setMaxPrice, setMinPrice }) => {
                 type="checkbox"
                 className="input"
                 value={c.nombre}
-                onChange={(e) => handleCategoryChange(c.nombre)}
+                onChange={(e) => handleCategoryChange(c.id)}
               />
               <span className="custom-checkbox"></span>
               {c.nombre}

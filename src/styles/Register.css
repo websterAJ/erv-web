@@ -1,0 +1,43 @@
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding-top: 72px;
+}
+
+.register-form-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.register-form-inner {
+  display: flex;
+  gap: 1rem;
+}
+
+.register-form-inner label {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form-inner label span {
+  margin-bottom: 0.5rem;
+}
+
+.register-form-inner label input {
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  min-width: 280px;
+  border: 1px solid var(--light-brown);
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.register-form-inner label input:focus {
+  outline: none;
+  background-color: var(--light-orange-gray);
+  border-color: var(--dark-brown);
+  transition: all 0.3s ease;
+}

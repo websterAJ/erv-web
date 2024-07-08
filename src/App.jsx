@@ -5,10 +5,11 @@ import Intendencia from "./pages/Intendencia";
 import UserPanel from "./pages/UserPanel";
 import UserOrders from "./components/UserOrders";
 import UserAccount from "./components/UserAccount";
+import Footer from "./sections/Footer";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 import axios from "axios";
-import Footer from "./sections/Footer";
-
 // axios.defaults.baseURL = "https://admin.ervzla.com/api";
 axios.defaults.baseURL = "http://localhost:8000/api";
 
@@ -23,6 +24,8 @@ function App() {
           <Route exact path="cuenta" element={<UserAccount />} />
           <Route exact path="pedidos" element={<UserOrders />} />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Register />} />
       </Routes>
       <Footer />
     </>

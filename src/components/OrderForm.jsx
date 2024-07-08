@@ -82,11 +82,19 @@ const OrderForm = ({ openForm, close, order }) => {
             disabled={true}
           />
 
-          <input type="file" onChange={handleFileChange} />
-          <button type="submit">Enviar</button>
-          <button type="button" onClick={close}>
-            Cerrar
-          </button>
+          <div className="">
+            <label htmlFor="">Cargar comprobante</label>
+            <input type="file" onChange={handleFileChange} />
+          </div>
+
+          <div className="form-btn-container">
+            <button className="btn-form" type="submit">
+              Enviar
+            </button>
+            <button className="btn-form" type="button" onClick={close}>
+              Cerrar
+            </button>
+          </div>
         </form>
       </div>
     </div>

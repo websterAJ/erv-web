@@ -1,23 +1,27 @@
 import axios from "axios";
-import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
 import { getCart } from "@/redux/actions";
+
+import Cookies from "js-cookie";
+import { Toaster } from "sonner";
+import { toast } from "sonner";
 
 import { GoDash, GoPlus } from "react-icons/go";
 
-import "@/styles/ShopCard.css";
-import { FaCheck, FaSpinner } from "react-icons/fa6";
 import Loader from "./Loader";
 import CheckMark from "./CheckMark";
 
-const ShopCard = ({ id, imagen, titulo, descripcion, precio }) => {
+import "@/styles/ShopCard.css";
+import { useEffect } from "react";
+
+const ShopCard = ({ id, imagen, titulo, descripcion, precio, nombre }) => {
   const dispatch = useDispatch();
 
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   const addProductToCart = async (
     producto_id,
@@ -27,22 +31,42 @@ const ShopCard = ({ id, imagen, titulo, descripcion, precio }) => {
   ) => {
     setLoading(true);
     try {
-      await axios.post("/carrito/add", {
+      const { data } = await axios.post("/carrito/add", {
         producto_id,
         carrito_id,
         cantidad,
         subtotal,
       });
-      setCount(1);
-      dispatch(getCart(2));
-      setSuccess(true);
-      setTimeout(() => setSuccess(false), 1000);
+
+      if (data.status !== "error") {
+        setCount(1);
+        dispatch(getCart(2));
+        setSuccess(true);
+        setTimeout(() => setSuccess(false), 1000);
+        toast.success(`Se agrego "${nombre}" al carrito`);
+      } else {
+        toast.error("No has iniciado sesión");
+      }
     } catch (error) {
+      setSuccess(false);
+      toast.error("No has iniciado sesión");
       console.error(error);
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const cookieData = Cookies.get("user");
+    if (cookieData) {
+      try {
+        const parsedData = JSON.parse(cookieData);
+        setUserData(parsedData);
+      } catch (error) {
+        console.error("Error al analizar la cookie:", error);
+      }
+    }
+  }, []);
 
   return (
     <>
@@ -60,7 +84,7 @@ const ShopCard = ({ id, imagen, titulo, descripcion, precio }) => {
         <div className="card__btn__container">
           <button
             className="card__btn"
-            onClick={() => addProductToCart(id, 4, count, precio)}
+            onClick={() => addProductToCart(id, userData?.id, count, precio)}
             disabled={loading || success}
           >
             {loading ? (
@@ -89,6 +113,7 @@ const ShopCard = ({ id, imagen, titulo, descripcion, precio }) => {
             </button>
           </div>
         </div>
+        <Toaster richColors />
       </div>
     </>
   );

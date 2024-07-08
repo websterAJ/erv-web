@@ -157,6 +157,33 @@
   margin-left: 0.5rem;
 }
 
+.nav-user-btn {
+  display: none;
+}
+
+.nav-user {
+  display: grid;
+}
+
+.nav-user p {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.nav-user-links {
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  opacity: 0;
+  display: none;
+}
+
+.nav-user-links.user-open {
+  opacity: 1;
+  display: grid;
+}
+
 @media (width >= 1080px) {
   .nav__container {
     justify-content: space-between;
@@ -176,6 +203,14 @@
     border-bottom: none;
   }
   .nav__button {
+    display: none;
+  }
+
+  .nav-user-btn {
+    display: flex;
+  }
+
+  .nav-user {
     display: none;
   }
 }

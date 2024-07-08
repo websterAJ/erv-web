@@ -1,0 +1,103 @@
+.login-container {
+  height: 100dvh;
+  width: 100%;
+  padding-top: 72px;
+}
+
+.login-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  padding: 2rem;
+}
+
+.login-banner img {
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--dark-brown);
+  background-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--brown);
+}
+
+.login-form label {
+  font-size: 1.3rem;
+}
+
+.login-form button {
+  border: none;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  color: var(--txt-white);
+  background-color: var(--dark-brown);
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: var(--brown);
+  transition: background-color 0.3s;
+}
+
+.form-links {
+  margin-top: 0.5rem;
+}
+
+.form-links p {
+  margin-top: 0.5rem;
+}
+
+.form-links a {
+  color: cornflowerblue;
+}
+
+@media (width > 768px) {
+  .login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-banner {
+    width: 50%;
+    height: 100%;
+    background-color: var(--light-orange-gray);
+  }
+
+  .login-banner img {
+    height: 300px;
+  }
+
+  .login-form {
+    width: 50%;
+  }
+
+  .login-form input,
+  .login-form button {
+    width: 100%;
+  }
+}

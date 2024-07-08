@@ -77,6 +77,39 @@
   display: block;
 }
 
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  padding-top: 2rem;
+}
+
+.paginarion-arrow-prev,
+.paginarion-arrow-next,
+.pagination-page {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: var(--main-bg-color);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.paginarion-arrow-prev:disabled,
+.paginarion-arrow-next:disabled {
+  background-color: var(--light-orange-gray);
+}
+
+.pagination-arrow {
+  fill: var(--white);
+}
+
+.pagination-page.active {
+  background-color: var(--dark-brown);
+}
+
 @media (width > 768px) {
   .intendencia__container {
     display: grid;
@@ -98,5 +131,17 @@
 
   .btn__filter {
     display: none;
+  }
+
+  .pagination-container {
+    grid-column: 2;
+  }
+
+  .paginarion-arrow-prev,
+  .paginarion-arrow-next,
+  .pagination-page {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
   }
 }

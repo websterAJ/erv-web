@@ -1,23 +1,25 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
-
 import logo from "@/assets/image/erv_logo.png";
-
-import {
-  FaUser,
-  FaCartShopping,
-  FaFacebookF,
-  FaXTwitter,
-} from "react-icons/fa6";
-
-import "@/styles/Navbar.css";
-import { Link } from "react-router-dom";
 import ShoppingCart from "./ShoppingCart";
 import UserButton from "./UserButton";
+import Cookies from "js-cookie";
+import "@/styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!Cookies.get("token"));
+  const [userOpen, setUserOpen] = useState(false);
+
+  useEffect(() => {
+    const handleCookieChange = () => {
+      setIsLoggedIn(!!Cookies.get("token"));
+    };
+
+    const interval = setInterval(handleCookieChange, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <nav className="nav__container">
@@ -89,27 +91,31 @@ const Navbar = () => {
             Intendencia
           </HashLink>
         </li>
+
+        <li
+          className="nav__link nav-user"
+          onClick={() => setUserOpen((prev) => !prev)}
+        >
+          <p>Mi Cuenta</p>
+          <div className={`nav-user-links ${userOpen ? "user-open" : ""}`}>
+            <Link to="/login" onClick={() => setToggle((prev) => !prev)}>
+              Iniciar Sesión
+            </Link>
+            <Link to="/login" onClick={() => setToggle((prev) => !prev)}>
+              Registrarse
+            </Link>
+          </div>
+        </li>
       </ul>
 
       <div className="nav__social">
-        {/* <ul>
-          <li>
-            <Link to="">
-              <FaFacebookF className="nav__social-icon" />
-            </Link>
-          </li>
-          <li>
-            <Link to="">
-              <FaXTwitter className="nav__social-icon" />
-            </Link>
-          </li>
-        </ul> */}
+        {isLoggedIn && (
+          <div className="nav__user">
+            <ShoppingCart />
+          </div>
+        )}
 
-        <div className="nav__user">
-          <ShoppingCart />
-        </div>
-
-        <div className="nav__user">
+        <div className="nav__user nav-user-btn">
           <UserButton />
         </div>
 
