@@ -41,3 +41,16 @@
   border-color: var(--dark-brown);
   transition: all 0.3s ease;
 }
+
+.register-form-container button {
+  padding: 0.7rem;
+  border: none;
+  color: var(--txt-white);
+  background-color: var(--dark-brown);
+  cursor: pointer;
+}
+
+.register-form-container button:hover {
+  background-color: var(--brown);
+  transition: background-color 0.3s;
+}

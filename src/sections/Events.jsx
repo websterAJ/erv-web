@@ -14,10 +14,15 @@ const Events = () => {
         <div className="events__card__container">
           <div className="events__card">
             <img className="" src={evento1} alt="" />
-            <h1>Titulo</h1>
+            <h1>Una generación que busca "SU ROSTRO"</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              sunt.
+              <span>Campamento Zonal 2024</span>
+            </p>
+            <p>
+              <span>Fecha:</span> del 15 al 18 de Agosto
+            </p>
+            <p>
+              <span>Lugar:</span> Ciudad Vacacional Los Caracas
             </p>
             <Link to="/evento">Más Información</Link>
           </div>

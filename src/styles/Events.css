@@ -21,7 +21,6 @@
 .events__card__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   gap: 2rem;
 }
 
@@ -38,6 +37,10 @@
 .events__card h1 {
   font-size: 2rem;
   color: var(--txt-black);
+}
+
+.events__card p span {
+  font-weight: bold;
 }
 
 .events__card a {
