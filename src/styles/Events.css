@@ -7,10 +7,11 @@
 }
 
 .events__title {
-  width: 80%;
+  width: 100%;
   font-size: 4rem;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
+  text-decoration: underline;
   color: var(--txt-white);
   padding-left: 2rem;
   margin-bottom: 2rem;
@@ -20,13 +21,14 @@
 .events__card__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
   gap: 2rem;
 }
 
 .events__card {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 350px;
 }
 
 .events__card img {

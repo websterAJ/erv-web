@@ -3,40 +3,34 @@ import React from "react";
 import pioneros from "@/assets/image/pioneros.png";
 import brijer from "@/assets/image/brijer.png";
 import erv from "@/assets/image/erv_logo.png";
+import massimo_calderon from "@/assets/image/massimo-calderon.png";
+import yudith_sandoval from "@/assets/image/yudith-sandoval.jpg";
+import leonardo_mesino from "@/assets/image/leonardo-mesino.jpg";
+import kervin_lemus from "@/assets/image/kervin-lemus.jpg";
 
 import "@/styles/About.css";
 
 const About = () => {
   const data = [
     {
-      title: "Comandante General",
-      name: "Nombre",
-      image:
-        "https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg",
+      title: "Comandante Nacional",
+      name: "Massimo Calderón",
+      image: massimo_calderon,
     },
     {
-      title: "Comandante Masculino",
-      name: "Nombre",
-      image:
-        "https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg",
+      title: "Comandante Nacional Femenino",
+      name: "Yudith Sandoval",
+      image: yudith_sandoval,
     },
     {
-      title: "Comandante Femenino",
-      name: "Nombre",
-      image:
-        "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.1.1518270500.1717459200&semt=sph",
+      title: "Secretario Nacional",
+      name: "Leonardo Mesino",
+      image: leonardo_mesino,
     },
     {
-      title: "Secretario de Acta",
-      name: "Nombre",
-      image:
-        "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg",
-    },
-    {
-      title: "Secretario de Finanzas",
-      name: "Nombre",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBQcRtWVDjSpn8k9DDCETUsh-LL3HVJGDMaQ&s",
+      title: "Tesorero Nacional",
+      name: "Kervin Lemus",
+      image: kervin_lemus,
     },
   ];
 

@@ -1,38 +1,32 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import ArrowPrev from "@/assets/svg/ArrowPrev";
 import ArrowNext from "@/assets/svg/ArrowNext";
+import Cross from "@/assets/svg/Cross";
+
+import img1 from "@/assets/image/img1.jpg";
+import img2 from "@/assets/image/img2.jpg";
+import img3 from "@/assets/image/img3.jpg";
 
 import "@/styles/Gallery.css";
-import Cross from "@/assets/svg/Cross";
 
 const Gallery = () => {
   const IMAGES = [
     {
-      src: "https://imgs.search.brave.com/8jAZFhLnMC4s_4ppedkNSFDv8avg9vDkePH76dsYZyA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90by1ncmF0aXMv/aGllcmJhLXNhbHZh/amUtcXVlLWNyZWNl/LW5hdHVyYWxlemFf/NTM4NzYtMTQ4MTY3/LmpwZz9zaXplPTYy/NiZleHQ9anBn",
+      src: img1,
+      desc: "Destacamento inaugurado en Zona 9 - Lirio de los Valles. 22/06/2024",
     },
     {
-      src: "https://content.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg",
+      src: img2,
+      desc: "7mo Destacamento de la zona 9 El Olivar",
     },
     {
-      src: "https://imgs.search.brave.com/ol-VFYvyTU-ArNLcFQ0MqH53T2FyQPCxE7zVbalSycA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9jb2xpbmFzLXZl/cmRlcy1hbC1hdGFy/ZGVjZXItdG9zY2Fu/YS1pdGFsaWEtaGVy/bW9zby1wYWlzYWpl/LXZlcmFuby1kZXN0/aW5vLXZpYWplLWZh/bW9zb181NDU2ODkt/MjgwNi5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw",
-    },
-    {
-      src: "https://imgs.search.brave.com/HJR_8EFUMfXcpgg10chKELnlaEbSYQBTrI6dKHs_bNU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9oZXJtb3NvLWVu/dG9ybm8tcGFpc2Fq/ZS1jYW1wby12ZXJk/ZV8yOTMzMi0xODU1/LmpwZz9zaXplPTYy/NiZleHQ9anBn",
-    },
-    {
-      src: "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg",
-    },
-    {
-      src: "https://i.pinimg.com/736x/f4/b0/fb/f4b0fb9dbe599df0bbd4e29c56713732.jpg",
-    },
-    {
-      src: "https://st5.depositphotos.com/64145070/64693/i/450/depositphotos_646930840-stock-photo-sunset-ocean-beach-beautiful-seascape.jpg",
+      src: img3,
+      desc: "8vo Destacamento Lirio de Los Valles zona 9. 23/06/2024",
     },
   ];
 
-  const [imageToShow, setImageToShow] = useState("");
+  const [imageToShow, setImageToShow] = useState(null);
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
 
   const showImage = (image) => {
@@ -43,12 +37,12 @@ const Gallery = () => {
   const nextImg = (e) => {
     e.stopPropagation();
 
-    let currentImg = IMAGES.findIndex((img) => img.src === imageToShow);
+    let currentImg = IMAGES.findIndex((img) => img.src === imageToShow.src);
 
     if (currentImg >= IMAGES.length - 1) {
       setLightBoxDisplay(false);
     } else {
-      let nextImage = IMAGES[currentImg + 1].src;
+      let nextImage = IMAGES[currentImg + 1];
       setImageToShow(nextImage);
     }
   };
@@ -56,12 +50,12 @@ const Gallery = () => {
   const prevImg = (e) => {
     e.stopPropagation();
 
-    let currentImg = IMAGES.findIndex((img) => img.src === imageToShow);
+    let currentImg = IMAGES.findIndex((img) => img.src === imageToShow.src);
 
     if (currentImg <= 0) {
       setLightBoxDisplay(false);
     } else {
-      let prevImage = IMAGES[currentImg - 1].src;
+      let prevImage = IMAGES[currentImg - 1];
       setImageToShow(prevImage);
     }
   };
@@ -72,40 +66,41 @@ const Gallery = () => {
         <h1 className="gallery__title">Galería</h1>
 
         <div className="grid-gallery">
-          {IMAGES?.map((image, index) => (
+          {IMAGES.map((image, index) => (
             <div
               key={index}
-              class="grid-gallery__item"
-              onClick={() => showImage(image.src)}
+              className="grid-gallery__item"
+              onClick={() => showImage(image)}
             >
-              <img class="grid-gallery__image" src={image.src} alt="" />
+              <img className="grid-gallery__image" src={image.src} alt="" />
             </div>
           ))}
         </div>
 
-        {lightboxDisplay ? (
+        {lightboxDisplay && imageToShow ? (
           <div className="lightbox" onClick={() => setLightBoxDisplay(false)}>
             <button
               className="lightbox-btn"
               onClick={() => setLightBoxDisplay(false)}
             >
-              <Cross className={"lightbox-btn-cross"} />
+              <Cross className="lightbox-btn-cross" />
             </button>
             <button className="lightbox-btn-prev" onClick={prevImg}>
-              <ArrowPrev className={"lightbox-btn-icon"} />
+              <ArrowPrev className="lightbox-btn-icon" />
             </button>
-            <img
-              className="lightbox-img"
-              src={imageToShow}
-              onClick={(e) => e.stopPropagation()}
-            ></img>{" "}
+            <div className="lightbox-img-container">
+              <img
+                className="lightbox-img"
+                src={imageToShow.src}
+                onClick={(e) => e.stopPropagation()}
+              ></img>
+              <p className="lightbox-img-desc">{imageToShow.desc}</p>
+            </div>
             <button className="lightbox-btn-next" onClick={nextImg}>
-              <ArrowNext className={"lightbox-btn-icon"} />
+              <ArrowNext className="lightbox-btn-icon" />
             </button>
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
       </section>
     </>
   );

@@ -25,7 +25,7 @@
 .about__card img {
   width: 200px;
   height: 200px;
-  object-fit: fill;
+  object-fit: contain;
   filter: drop-shadow(2px 2px 15px var(--dark-brown));
 }
 

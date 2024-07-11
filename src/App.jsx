@@ -8,6 +8,7 @@ import UserAccount from "./components/UserAccount";
 import Footer from "./sections/Footer";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import EventsDescription from "./sections/EventsDescription";
 
 import axios from "axios";
 // axios.defaults.baseURL = "https://admin.ervzla.com/api";
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/evento" element={<EventsDescription />} />
         <Route path="/intendencia" element={<Intendencia />} />
         <Route exact path="/panel-de-usuario" element={<UserPanel />}>
           <Route exact path="cuenta" element={<UserAccount />} />
