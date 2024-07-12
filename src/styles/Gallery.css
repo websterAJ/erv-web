@@ -8,13 +8,13 @@
 }
 
 .gallery__title {
-  width: 80%;
+  width: 100%;
   font-size: 4rem;
   font-weight: 400;
   color: var(--txt-brown);
-  padding-left: 2rem;
   margin-bottom: 2rem;
-  text-align: left;
+  text-align: center;
+  text-decoration: underline;
   text-shadow: 2px 2px 10px var(--main-bg-color);
 }
 

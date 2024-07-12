@@ -1,9 +1,8 @@
 .quote__container {
-  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 5rem;
+  padding: 2rem 1rem;
   background-color: var(--black);
 }
 
@@ -15,21 +14,43 @@
 
 .quote__container blockquote p {
   text-align: center;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 .quote__container blockquote p::after {
   content: "“";
   position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 9rem;
+  top: 2rem;
+  left: 2rem;
+  font-size: 3rem;
 }
 
 .quote__container blockquote p::before {
   content: "“";
   position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 9rem;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+}
+
+@media (width > 768px) {
+  .quote__container {
+    padding: 2rem 5rem;
+  }
+
+  .quote__container blockquote p {
+    font-size: 3rem;
+  }
+
+  .quote__container blockquote p::after {
+    top: 2rem;
+    left: 1rem;
+    font-size: 5rem;
+  }
+
+  .quote__container blockquote p::before {
+    top: 2rem;
+    right: 1rem;
+    font-size: 5rem;
+  }
 }
