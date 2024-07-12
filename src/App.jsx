@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/evento" element={<EventsDescription />} />
+        <Route path="/evento/:slug" element={<EventsDescription />} />
         <Route path="/intendencia" element={<Intendencia />} />
         <Route exact path="/panel-de-usuario" element={<UserPanel />}>
           <Route exact path="cuenta" element={<UserAccount />} />

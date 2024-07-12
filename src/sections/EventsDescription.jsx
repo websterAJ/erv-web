@@ -1,19 +1,27 @@
 import React from "react";
-
-import evento1 from "@/assets/image/evento1.jpg";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import "@/styles/EventsDescription.css";
 
 const EventsDescription = () => {
+  const location = useLocation();
+  const { evento } = location.state || {};
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 0);
+  }, []);
+
   return (
     <>
       <div className="event-description-container">
-        <img src={evento1} alt="" />
+        <img src={evento?.imagen} alt="" />
         <div>
-          <h1>Una Generación que busca "SU ROSTRO"</h1>
-          <p>Campamento Zonal 2024</p>
-          <p>del 15 al 18 de Agosto</p>
-          <p>Ciudad Vacacional Los Caracas</p>
+          <h1>{evento?.titulo}</h1>
+          <p>{evento?.fecha}</p>
+          <p>{evento?.lugar}</p>
         </div>
       </div>
     </>

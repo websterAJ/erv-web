@@ -33,11 +33,16 @@
 
 .events__card img {
   width: 100%;
+  height: 400px;
+  object-fit: fill;
 }
 
 .events__card h1 {
   font-size: 2rem;
   color: var(--txt-black);
+  text-align: center;
+  font-weight: bold;
+  margin-block: 0.5rem;
 }
 
 .events__card p span {
