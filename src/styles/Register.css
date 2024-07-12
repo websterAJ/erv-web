@@ -13,6 +13,7 @@
 
 .register-form-inner {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -53,4 +54,10 @@
 .register-form-container button:hover {
   background-color: var(--brown);
   transition: background-color 0.3s;
+}
+
+@media (width > 768px) {
+  .register-form-inner {
+    flex-direction: row;
+  }
 }

@@ -28,6 +28,20 @@ const Navbar = () => {
       </div>
 
       <ul className={`nav__links ${toggle ? "nav__open" : ""}`}>
+        <li
+          className="nav__link nav-user"
+          onClick={() => setUserOpen((prev) => !prev)}
+        >
+          <p>Mi Cuenta</p>
+          <div className={`nav-user-links ${!userOpen ? "user-open" : ""}`}>
+            <Link to="/login" onClick={() => setToggle((prev) => !prev)}>
+              Iniciar Sesión
+            </Link>
+            <Link to="/registro" onClick={() => setToggle((prev) => !prev)}>
+              Registrarse
+            </Link>
+          </div>
+        </li>
         <li className="nav__link">
           <HashLink
             smooth
@@ -90,21 +104,6 @@ const Navbar = () => {
           >
             Intendencia
           </HashLink>
-        </li>
-
-        <li
-          className="nav__link nav-user"
-          onClick={() => setUserOpen((prev) => !prev)}
-        >
-          <p>Mi Cuenta</p>
-          <div className={`nav-user-links ${userOpen ? "user-open" : ""}`}>
-            <Link to="/login" onClick={() => setToggle((prev) => !prev)}>
-              Iniciar Sesión
-            </Link>
-            <Link to="/login" onClick={() => setToggle((prev) => !prev)}>
-              Registrarse
-            </Link>
-          </div>
         </li>
       </ul>
 
