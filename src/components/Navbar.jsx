@@ -34,74 +34,46 @@ const Navbar = () => {
         >
           <p>Mi Cuenta</p>
           <div className={`nav-user-links ${!userOpen ? "user-open" : ""}`}>
-            <Link to="/login" onClick={() => setToggle((prev) => !prev)}>
+            <Link to="/login" onClick={() => setToggle(false)}>
               Iniciar Sesión
             </Link>
-            <Link to="/registro" onClick={() => setToggle((prev) => !prev)}>
+            <Link to="/registro" onClick={() => setToggle(false)}>
               Registrarse
             </Link>
           </div>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/#inicio"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/#inicio" onClick={() => setToggle(false)}>
             Inicio
           </HashLink>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/#nosotros"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/#nosotros" onClick={() => setToggle(false)}>
             Conocemos
           </HashLink>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/#eventos"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/#eventos" onClick={() => setToggle(false)}>
             Eventos
           </HashLink>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/#galeria"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/#galeria" onClick={() => setToggle(false)}>
             Galería
           </HashLink>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/#blog"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/#blog" onClick={() => setToggle(false)}>
             Blog
           </HashLink>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/#contacto"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/#contacto" onClick={() => setToggle(false)}>
             Contactanos
           </HashLink>
         </li>
         <li className="nav__link">
-          <HashLink
-            smooth
-            to="/intendencia"
-            onClick={() => setToggle((prev) => !prev)}
-          >
+          <HashLink smooth to="/intendencia" onClick={() => setToggle(false)}>
             Intendencia
           </HashLink>
         </li>

@@ -28,9 +28,9 @@
   top: 72px;
   left: 0;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   width: 100%;
+  height: 100dvh;
   list-style: none;
   visibility: hidden;
   opacity: 0;
@@ -41,6 +41,7 @@
   visibility: visible;
   opacity: 1;
   transition: visibility 0.3s ease, opacity 0.3s;
+  overflow-y: auto;
 }
 
 .nav__links .nav__link {
@@ -192,6 +193,7 @@
   .nav__links {
     position: relative;
     top: 0;
+    height: 100%;
     justify-content: center;
     flex-direction: row;
     visibility: visible;

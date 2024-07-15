@@ -17,6 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getBanner } from "@/redux/actions";
 
+import logo from "@/assets/image/erv_logo.png";
+
 const Header = () => {
   const dispatch = useDispatch();
   const banner = useSelector((state) => state.banner);
@@ -28,6 +30,12 @@ const Header = () => {
   return (
     <>
       <section id="inicio" className="header__container">
+        <article>
+          <img src={logo} alt="" />
+          <span>Bienvenivos a</span>
+          <h1>Exploradores del Rey</h1>
+          <a href="#nosotros">Saber más</a>
+        </article>
         <Swiper
           autoplay={{
             delay: 3000,

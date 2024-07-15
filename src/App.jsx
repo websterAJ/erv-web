@@ -11,8 +11,8 @@ import Register from "./pages/Register";
 import EventsDescription from "./sections/EventsDescription";
 
 import axios from "axios";
-// axios.defaults.baseURL = "https://admin.ervzla.com/api";
-axios.defaults.baseURL = "http://localhost:8000/api";
+axios.defaults.baseURL = "https://admin.ervzla.com/api";
+// axios.defaults.baseURL = "http://localhost:8000/api";
 
 function App() {
   return (

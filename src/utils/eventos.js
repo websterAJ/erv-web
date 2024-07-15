@@ -15,7 +15,7 @@ export const EVENTOS = [
   {
     imagen: venciendo_obstaculos,
     titulo: "Venciendo Obstáculos",
-    fecha: "de 01 al 03 de Agosto",
+    fecha: "de 08 al 10 de Agosto",
     lugar: "Cabimas, Edo Zulia, Granja el renuevo",
   },
   {

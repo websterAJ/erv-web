@@ -4,19 +4,38 @@
   justify-content: center;
   flex-direction: column;
   padding-top: 72px;
+  padding-bottom: 2rem;
+  background-color: var(--light-brown);
 }
 
 .header__container article {
+  display: grid;
+  place-items: center;
   text-align: center;
   width: 100%;
   padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.header__container article img {
+  width: 150px;
+}
+
+.header__container article span {
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--txt-white);
+  text-shadow: 2px 2px 15px var(--dark-brown);
 }
 
 .header__container article h1 {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px 15px var(--dark-brown);
   margin-bottom: 1.6rem;
-  color: var(--txt-black);
+  color: var(--txt-white);
+  text-decoration: underline;
 }
 
 .header__container article a {
@@ -26,18 +45,19 @@
   padding-block: 0.4rem;
   padding-inline: 3rem;
   background-color: var(--dark-brown);
+  cursor: pointer;
 }
 
 .carousel__container {
   width: 100%;
-  height: 400px;
+  height: 100%;
   padding: 1rem;
 }
 
 .carousel__container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 @media (width > 768px) {
@@ -46,15 +66,16 @@
     flex-direction: row;
     height: calc(100dvh + 72px);
     padding-top: 0;
+    padding-inline: 2rem;
   }
 
   .header__container article {
-    width: 60%;
+    width: 50%;
     text-align: left;
   }
 
   .header__container article h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   .header__container article a {
@@ -67,9 +88,8 @@
   }
 
   .carousel__container {
-    padding: 2rem;
-    width: 100%;
-    height: 100dvh;
+    width: 50%;
+    height: 70%;
     border-radius: 5px;
   }
 }
