@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "dockerfilePath": "./Dockerfile",
+  "services": [
+    {
+      "name": "web",
+      "ports": ["80:80"]
+    }
+  ]
+}
